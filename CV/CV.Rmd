@@ -1,0 +1,66 @@
+---
+name: J. Clinton
+surname: Rooker
+position: "PhD Student"
+address: "Department of Political Science, UW-Madison"
+phone: 810 333-6245
+email: "jcrooker@wisc.edu"
+github: clintrooker
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::hyndman
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "BA, Political Science", "2013-2017", "University of Michigan", "Ann Arbor, MI",
+  "PhD, Political Science", "2020-Present", "UW-Madison", "Madison, WI",
+
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Research Experience
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "July 2020-Present", "Research Consultant", "Cornell University",
+  "Aug 2019-Jan 2020", "Research Coordinator", "University of Chicago"
+) %>% 
+  brief_entries(
+    glue::glue("{Type}"),
+    Year, 
+    Desc
+  )
+```
+
+# Teaching Experience
+
+``` {r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  "March 2018-Aug 2018", "Writing Instructor", "UW-Madison PEOPLE Program"
+) %>% 
+  brief_entries(
+    glue::glue("{Type}"),
+    Year, 
+    Desc
+  )
+
+```
+# Works Under Review
+
+Ezell, Jerel, and Rooker, John C. 2020. *A population-based assessment of physical symptoms and mental health outcomes among adults following the Flint Water Crisis*
+*American Journal of Public Health* 
+
+
+
